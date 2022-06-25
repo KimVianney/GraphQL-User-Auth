@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+
 import django 
 from django.utils.encoding import force_str
 django.utils.encoding.force_text = force_str
@@ -52,6 +53,7 @@ INSTALLED_APPS = [
     'graphene_django',
     'graphql_jwt',
     'graphql_jwt.refresh_token.apps.RefreshTokenConfig',
+    'graphql_auth',
 
     #Apps
     'users',
@@ -151,6 +153,7 @@ GRAPHENE = {
 }
 
 AUTHENTICATION_BACKENDS = [
-    'graphql_jwt.backends.JSONWebTokenBackend',
+    # 'graphql_jwt.backends.JSONWebTokenBackend',
+    'graphql_auth.backend.GraphQLAuthBackend',
     'django.contrib.auth.backends.ModelBackend',
 ]
