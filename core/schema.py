@@ -9,4 +9,4 @@ class Query(UserQuery, MeQuery, graphene.ObjectType):
 
 
 
-schema = graphene.Schema(guery=Query)
+schema = graphene.Schema(query=Query)
